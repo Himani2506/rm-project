@@ -9,6 +9,7 @@ Built for the CDIE Recruitment Manager Portal technical assessment.
 **Live demo:** <https://rm-project.onrender.com>
 _(hosted on Render's free tier — the first request after a period of inactivity may take ~50 seconds to wake the service)_
 
+PASSWORDS - ADMIN ( USERNAME : ADMIN , PASSWORD :ADMIN ) , STUDENT ( USERNAME : STUDENT , PASSWORD : STUDENT)
 ---
 
 ## Video demonstration
