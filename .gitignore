@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+data/app.db
+data/app.db-wal
+data/app.db-shm
+.pytest_cache/
+.DS_Store
+*.log
+
+# frontend/dist IS committed on purpose: it lets the deploy run on a
+# plain Python runtime with no Node toolchain. Rebuild before every push.

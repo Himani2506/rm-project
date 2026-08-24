@@ -1,0 +1,25 @@
+# Single web service. The frontend bundle is committed, so the build is
+# pip-only and needs no Node toolchain on the host.
+services:
+  - type: web
+    name: rm-student-pipeline
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.3"
+      - key: RM_DB_PATH
+        value: /tmp/app.db
+      - key: RM_ENV
+        value: production
+      # Set in the dashboard, not here. Without it a random key is generated
+      # at startup, which logs everyone out whenever the instance restarts.
+      - key: RM_SECRET_KEY
+        sync: false
+      - key: RM_ADMIN_PASSWORD
+        sync: false
+      - key: RM_STUDENT_PASSWORD
+        sync: false

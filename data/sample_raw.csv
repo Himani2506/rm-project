@@ -1,0 +1,100 @@
+Name,Gender,Grade,Math,Science,English,Total
+Navya',male,11,47,63,74,184
+ROHAN,F,Grade 3,16,77,8,101
+Aditi',0,Grade 11,28 marks,43 marks,46,117
+Myra,Male,7,74,12,72,158
+ISHAAN,male,3,92 marks,27,25,144
+"""Aarav""",M,Grade 9,22 marks,87,56,165
+Aditi,m,Grade 1,26 marks,22,20,68
+Saanvi,Female,Grade 3,57,56,91,204
+"""Anika""",1,10,45,5,48 marks,98
+Krishna,M,Grade 12,12 marks,64 marks,75,151
+MYRA,F,5,99,95,75,269
+"""Advika""",F,5,91 marks,70 marks,21,182
+"""Anika""",F,Grade 12,41,13,97 marks,151
+Shaurya,M,3,79 marks,80,32,191
+Ananya,f,Grade 5,3 marks,48 marks,49,100
+Shaurya,female,Grade 3,46 marks,51,89,186
+Zara',female,Grade 4,64,45 marks,41,150
+KABIR,f,10,77,31,75,183
+ISHAAN,1,7,68,34 marks,72,174
+"""Anika""",male,Grade 5,35,97,73,205
+"""Aditi""",F,6,48 marks,52,38,138
+Zara,f,9,29 marks,38 marks,21,88
+"""Advika""",Female,Grade 10,26,43,30,99
+Arjun,Female,Grade 8,17,30 marks,15,62
+ARYAN,m,Grade 7,25,22 marks,72 marks,119
+"""Ananya""",F,Grade 4,51 marks,35,21,107
+"""Arjun""",1,9,3,16,34,53
+"""Arjun""",F,4,11 marks,11 marks,61,83
+Anika',f,1,24 marks,95,40 marks,159
+AARAV,f,Grade 10,71 marks,34 marks,60,165
+Zara',1,Grade 1,74 marks,69 marks,51,194
+Kabir,male,8,18,36 marks,45,99
+VIHAAN,F,Grade 4,63,11,1 marks,75
+Ananya,F,Grade 10,14,70,18,102
+REYANSH,male,10,69,37,27 marks,133
+SHAURYA,0,1,19,66,93,178
+Kabir,F,Grade 8,62,90,43,195
+Myra,Female,3,74,97 marks,70 marks,241
+"""Kabir""",M,10,49,75,66,190
+AARAV,M,6,22,30 marks,79,131
+Shaurya',M,6,84,72,19,175
+DIYA,Male,6,47 marks,54,15,116
+Anika',Male,12,36,85 marks,71,192
+Reyansh',male,2,64 marks,37,53 marks,154
+"""Rohan""",F,8,61,10,69 marks,140
+"""Kabir""",F,Grade 6,17,15,38 marks,70
+Reyansh',0,7,8,83 marks,50,141
+Diya',Male,Grade 7,1 marks,92,95,188
+"""Vihaan""",Male,2,4,57,25,86
+SAANVI,F,Grade 8,37 marks,61,45,143
+Reyansh,M,4,30,55,82,167
+"""Advika""",F,Grade 8,37,38,91 marks,166
+Aryan',0,6,78 marks,21,2 marks,101
+Reyansh',Female,8,26,12,13,51
+Isha,Female,Grade 10,68,73,46 marks,187
+"""Kabir""",Male,Grade 1,27,1 marks,93 marks,121
+Advika,m,6,11,85 marks,68 marks,164
+Advika,male,10,69,66 marks,95,230
+AARAV,F,2,26,6,57,89
+"""Ishaan""",F,Grade 5,80,82,42,204
+NAVYA,M,12,75,22 marks,86 marks,183
+Diya',male,Grade 4,87,46,20,153
+Saanvi',0,Grade 10,64,64,19,147
+Saanvi,Female,3,99,4,71,174
+Anika,male,Grade 1,15 marks,10,59,84
+Myra',1,11,41 marks,51,43 marks,135
+Arjun',1,Grade 2,31,90 marks,34 marks,155
+Aditi,F,Grade 12,78,21 marks,89,188
+Aarav',M,5,70,82 marks,53 marks,205
+REYANSH,female,2,77 marks,61 marks,82,220
+AARAV,M,11,30,37,39,106
+Rohan,m,Grade 7,28,84,77,189
+"""Vihaan""",M,10,44 marks,13,80,137
+ISHAAN,Male,3,59,3,32 marks,94
+"""Zara""",Female,Grade 10,74 marks,6 marks,17,97
+Ananya,F,9,36,47 marks,30 marks,113
+Shaurya,Female,8,60,33,7 marks,100
+"""Ishaan""",Male,6,38 marks,60,65,163
+Aarav,Male,9,44,18 marks,18 marks,80
+MYRA,Male,12,7 marks,62 marks,55,124
+KRISHNA,female,Grade 3,95,38,80,213
+Aryan,m,3,84,51,76,211
+"""Aditi""",m,1,86 marks,81 marks,89,256
+"""Vihaan""",M,6,5,18,86,109
+Advika,Female,1,25 marks,70,73,168
+"""Advika""",Male,5,37,60 marks,77,174
+NAVYA,F,1,70,81,50,201
+"""Rohan""",M,8,44,14 marks,96 marks,154
+"""Reyansh""",Male,1,60,23,54,137
+ADVIKA,F,1,84,13,53,150
+Aryan',M,Grade 9,98,43,100 marks,241
+Rohan',m,Grade 12,13 marks,97 marks,30,140
+Kabir',1,4,11,31 marks,8 marks,50
+"""Rohan""",female,Grade 10,71,55,46 marks,172
+DIYA,Female,8,14,73,50,137
+"""Reyansh""",0,1,32,45,1 marks,78
+VIHAAN,female,9,98 marks,55,98,251
+Krishna,Female,9,87,94 marks,30,211
+Shaurya',0,6,72,14,33,119
