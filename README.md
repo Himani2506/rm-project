@@ -4,24 +4,16 @@ Upload a raw student CSV, clean it automatically, set a minimum total score, and
 
 Built for the CDIE Recruitment Manager Portal technical assessment.
 
-![CI](https://github.com/USERNAME/REPO/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Himani2506/rm-project/actions/workflows/ci.yml/badge.svg)
 
-**Live demo:** _add your deployment URL here_
+**Live demo:** <https://rm-project.onrender.com>
 _(hosted on Render's free tier — the first request after a period of inactivity may take ~50 seconds to wake the service)_
 
 ---
 
 ## Video demonstration
 
-<!--
-  Replace the line below with your recording. Two options:
-  1. Drag an .mp4 (under 10 MB) into a GitHub issue comment, copy the generated
-     URL, and paste it here as a bare link — GitHub renders it as a player.
-  2. Upload to YouTube/Loom and use a thumbnail link:
-     [![Demo](thumbnail-url)](video-url)
--->
-
-**▶ [Watch the 90-second demo](ADD_VIDEO_LINK_HERE)**
+**▶ [Watch the 90-second demo](https://drive.google.com/file/d/1cIH-m_z7CukO28jBt2_ACvhom59HIL-P/view?usp=sharing)**
 
 Covers: uploading the raw file, the cleaning report, dragging the score threshold, exporting the shortlist, and two browsers staying in sync as a student is debarred.
 
@@ -32,8 +24,8 @@ Covers: uploading the raw file, the cleaning report, dragging the score threshol
 Requires Python 3.11+ and Node 18+.
 
 ```bash
-git clone https://github.com/USERNAME/REPO.git
-cd REPO
+git clone https://github.com/Himani2506/rm-project.git
+cd rm-project
 
 pip install -r requirements.txt
 cd frontend && npm install && npm run build && cd ..
@@ -57,7 +49,7 @@ Open <http://localhost:5173>.
 </details>
 
 ```bash
-make test     # 51 tests
+make test     # 84 tests
 make bench    # pipeline timings at 1k / 10k / 100k rows
 ```
 
@@ -85,10 +77,10 @@ backend/
   db.py         SQLite; the single source of truth for student state
   main.py       routes, static host, WebSocket endpoint
   ws.py         connection manager / broadcast
-  auth.py       role gate (stub — see below)
+  auth.py       password hashing, token issue and verification, role gates
   models.py     pydantic request bodies
 frontend/src/   React; Histogram.jsx is hand-rolled SVG, no chart dependency
-tests/          37 pipeline tests + 14 API tests
+tests/          45 pipeline tests + 39 API tests
 scripts/        benchmark harness
 ```
 
@@ -223,13 +215,14 @@ Measured timings are surfaced in the UI — `query N ms` under the statistics, `
 | POST | `/api/upload` | admin | multipart file, optional `mapping` → cleaning report |
 | GET | `/api/students` | any | `min_total`, `shortlist_only`, `search` |
 | GET | `/api/stats` | any | counts, averages, histogram buckets |
+| GET | `/api/health` | — | liveness probe; returns no cohort data |
 | GET | `/api/cleaning-log` | admin | latest run's change log |
 | GET | `/api/audit` | admin | status-change history |
 | PATCH | `/api/students/{id}/status` | admin | broadcasts |
 | PATCH | `/api/students/status` | admin | bulk; broadcasts |
 | GET | `/api/export` | admin | shortlist CSV |
 | GET | `/api/export/rejects` | admin | quarantined rows CSV |
-| WS | `/ws` | any | `status_changed`, `bulk_status_changed`, `dataset_replaced`, `presence` |
+| WS | `/ws` | ticket | `status_changed`, `bulk_status_changed`, `dataset_replaced`, `presence` |
 
 ### Authentication and roles
 
@@ -258,8 +251,8 @@ different `purpose` claims.
 Built on `hashlib`, `hmac` and `secrets` from the standard library, so there is
 no extra dependency to install on the host.
 
-Set `RM_SECRET_KEY`, `RM_ADMIN_PASSWORD` and `RM_STUDENT_PASSWORD` in the
-environment on a real deployment. Without `RM_SECRET_KEY` a random key is
+Set `RM_SECRET_KEY`, `RM_ADMIN_PASSWORD`, `RM_STUDENT_PASSWORD` and
+`RM_ENV=production` in the environment on a real deployment. Without `RM_SECRET_KEY` a random key is
 generated at startup, which invalidates existing sessions on restart rather
 than falling back to a guessable default.
 
@@ -292,6 +285,10 @@ environment variables.
 
 The repository includes `render.yaml`. Point Render at the repo and it builds the frontend and starts uvicorn as one web service.
 
+Environment variables: `RM_SECRET_KEY` (session signing), `RM_ADMIN_PASSWORD`
+and `RM_STUDENT_PASSWORD` (credentials), `RM_ENV=production` (disables the
+development CORS allowance), `RM_DB_PATH` (SQLite location).
+
 Two things worth knowing on a free tier:
 
 - The service sleeps after inactivity; the first request wakes it in roughly 50 seconds.
@@ -323,7 +320,7 @@ The API tests assert exact shortlist counts at four thresholds against the suppl
 
 ## Notes and limitations
 
-- `data/sample_raw.csv` was transcribed from the assessment spreadsheet. **Replace it with the official download before recording your demo** — the Google Sheets preview renders a fixed 100-row grid, so if the source file is longer, the extra rows were not captured here.
+- `data/sample_raw.csv` is the supplied assessment dataset, included so the app can be run end to end without hunting for a file.
 - Imputation uses a grade-level median. With a small cohort in a given grade this is a weak estimate; the row is flagged in the UI so the value is never mistaken for a reported mark.
 - The pipeline holds the full file in memory. Beyond a few hundred thousand rows it would need chunked reads.
 - A maximum of three score columns is supported, matching the assessment schema. A file with more numeric columns is still accepted — the admin chooses which three to score on.
